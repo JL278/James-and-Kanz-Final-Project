@@ -1,4 +1,70 @@
 var fillColor = color(255,100,100);
+var tree = function(){
+// tree
+triangle(166, 90, 319, 325, 4, 322);
+triangle(299, 250, 157, 82, -1, 249);
+triangle(272, 157, 157, 48, 39, 154);
+
+//trees wood
+rect(134, 324, 56, 59);
+
+//gift on far right
+rect(217, 356, 93, 43);
+ 
+ // lines for gift
+rect(261, 354, 12, 57);
+rect(214, 370, 100, 11);
+
+// gift on far left
+rect(1, 319, 81, 80);
+
+//lines for gift
+rect(33, 319, 18, 80);
+rect( 1, 350, 82,18);
+
+// ornaments
+ellipse(223, 216, 26, 28);
+
+ellipse(61, 292 ,26 ,28);
+
+ellipse(158, 115, 26, 28);
+
+ellipse(83, 220, 26, 28);
+
+ellipse(252, 294, 26, 28);
+
+ellipse(150, 268, 26, 28);
+
+ellipse(165, 171, 26, 28);
+
+ellipse(212, 123, 26, 28);
+
+ellipse(107, 123, 26, 28);
+};//tree coloring page
+var car = function() {
+rect(14,222,243,67);//body
+
+line(123,149,57,223);//roof
+line(160,149,216,224);
+line(120,153,161,152);
+
+ellipse(46,303,60,60);//wheels
+ellipse(227,303,60,60);//wheels
+ellipse(227,303,40,40);//inner wheel
+ellipse(46,303,40,40);//inner wheel
+
+fill(255,255,255);
+rect(-1,332,403,67);//floor
+
+fill(255, 255,255);
+rect(18, 349, 77, 24); //stripe 1
+
+rect(123, 349, 76, 24); //stripe 2
+
+rect(224, 349, 76, 24); // stripe 3
+
+rect(316, 349, 76, 24); //stripe 4
+};//car coloring page
 
 //James Leuk
 var drawBitmoji = function (bitmojiX, bitmojiY, bitHeight)
@@ -263,9 +329,6 @@ var drawFood = function (foodX, foodY, foodSize) {
 
 var currentScene = 0; //0 = Splash Screen, 1 = game screen
 
-
-
-
 var Button = function(config) {
     this.x = config.x || 0;
     this.y = config.y || 0;
@@ -301,17 +364,17 @@ Button.prototype.handleMouseClick = function() {
 
 
 var blueButton = new Button({
-    x:291,
-    y:180,
+    x:407,
+    y:260,
     label: "Blue",
     onClick: function() {
-        fillColor = color(72, 0, 255);
+        fillColor = color(0, 17, 255);
     }
 });
 
 var yellowButton = new Button({
-    x:291,
-    y:100,
+    x:407,
+    y:180,
     label: "Yellow",
     onClick: function() {
         fillColor = color(255,255,0);
@@ -319,27 +382,100 @@ var yellowButton = new Button({
 });
 
 var greenButton = new Button({
-    x:291,
-    y:30,
+    x:407,
+    y:100,
     label: "Green",
     onClick: function() {
         fillColor = color(0, 255, 55);
     }
 });
 
+var TblackButton = new Button({
+    x:407,
+    y:180,
+    label: "Black",
+    onClick: function() {
+        fillColor = color(0,0,0);
+    }
+}); //colors for tree drawing page
+
+var TblueButton = new Button({
+    x:407,
+    y:100,
+    label: "Blue",
+    onClick: function() {
+        fillColor = color(0, 9, 255);
+    }
+}); //colors for tree drawing page
+
+var TgreenButton = new Button({
+    x:291,
+    y:30,
+    label: "Green",
+    onClick: function() {
+        fillColor = color(0, 255, 55);
+    }
+}); //colors for tree drawing page
+
+var TredButton = new Button({
+    x:291,
+    y:261,
+    label: "Red",
+    onClick: function() {
+        fillColor = color(235, 23, 37);
+    }
+}); //colors for tree drawing page
+
+
+var CblackButton = new Button({
+    x:291,
+    y:180,
+    label: "Black",
+    onClick: function() {
+        fillColor = color(0,0,0);
+    }
+});//colors for car drawing page
+
+var CyellowButton = new Button({
+    x:291,
+    y:100,
+    label: "Yellow",
+    onClick: function() {
+        fillColor = color(255,255,0);
+    }
+});//colors for car drawing page
+
+var CgreenButton = new Button({
+    x:291,
+    y:30,
+    label: "Green",
+    onClick: function() {
+        fillColor = color(0, 255, 55);
+    }
+});//colors for car drawing page
+
+var CredButton = new Button({
+    x:291,
+    y:230,
+    label: "Red",
+    onClick: function() {
+        fillColor = color(235, 23, 37);
+    }
+});//colors for car drawing page
+
 var drawScene1 = function(){
     currentScene = 1;
-    background(0, 0, 0);
+    background(0,0,0);
    
     fill(255,255,255);
-    textSize(400);
-    text("V",0,-32);
+    textSize(300);
+    text("KJ",0,95);
    
     blueButton.draw();
     yellowButton.draw();
     greenButton.draw();
    
-    noStroke();
+   noStroke();
 };
 var drawScene2 = function(){
     currentScene = 2;
@@ -373,6 +509,32 @@ var drawScene2 = function(){
 var drawScene3 = function(){
     currentScene = 3;
     background(40, 44, 173);
+};
+var drawScene4 = function(){
+    currentScene = 4;
+    background(255,255,255);
+    
+    tree(52,30,30,30);
+    
+    TblackButton.draw();
+    TblueButton.draw();
+    TgreenButton.draw();
+    TredButton.draw();
+    
+    noStroke();
+};
+var drawScene5 = function(){
+    currentScene = 5;
+    background(255,255,255);
+    
+    car(52,30,30,30);
+    
+    CblackButton.draw();
+    CyellowButton.draw();
+    CgreenButton.draw();
+    CredButton.draw();
+    
+    noStroke();
 };
 
 var btn1 = new Button({
@@ -440,6 +602,23 @@ mouseClicked = function() {
     yellowButton.handleMouseClick();
     greenButton.handleMouseClick();
     }
+    
+    if(currentScene === 4) {
+   
+    TblackButton.handleMouseClick();
+    TblueButton.handleMouseClick();
+    TgreenButton.handleMouseClick();
+    TredButton.handleMouseClick();
+    }
+    
+    if(currentScene === 5) {
+   
+    CyellowButton.handleMouseClick();
+    CgreenButton.handleMouseClick();
+    CblackButton.handleMouseClick();
+    CredButton.handleMouseClick();
+    }
+  
 };
 
    
@@ -448,4 +627,19 @@ var draw = function() {
         drawScene0();//draws splash screen
     }
    
+     if (currentScene === 2) {
+        drawScene2();
+    }
+    
+    if (currentScene === 3) {
+        drawScene3();
+    }
+    
+    if (currentScene === 4) {
+        drawScene4();
+    }
+    
+    if (currentScene === 5) {
+        drawScene5();
+    }
 };
