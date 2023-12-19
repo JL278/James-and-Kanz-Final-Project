@@ -1,0 +1,1181 @@
+var fillColor;
+var sc1;
+var sc4;
+var sc5;
+var sc4a;
+var sc5a;
+
+//James Leuk
+var drawBitmoji = function (bitmojiX, bitmojiY, bitHeight)
+{
+    stroke(0);
+    strokeWeight(1);
+    
+    
+    fill(255, 207, 153);
+    ellipse(bitmojiX + 50 * bitHeight / 100, bitmojiY + 50 * bitHeight / 100, 65 * bitHeight     / 100, 75 * bitHeight / 100); // face
+    ellipse(bitmojiX + 35 * bitHeight / 100, bitmojiY + 46 * bitHeight / 100, 24 * bitHeight     / 100, 16 * bitHeight / 100); // left glasses
+    ellipse(bitmojiX + 62 * bitHeight / 100, bitmojiY + 46 * bitHeight / 100, 24 * bitHeight     / 100, 16 * bitHeight / 100); // right glasses
+    line(bitmojiX + 51 * bitHeight / 100, bitmojiY + 44 * bitHeight / 100, bitmojiX + 46 *       bitHeight / 100, bitmojiY + 45 * bitHeight / 100); // glasses middle part
+    line(bitmojiX + 11 * bitHeight / 100, bitmojiY + 44 * bitHeight / 100, bitmojiX + 24 *       bitHeight / 100, bitmojiY + 45 * bitHeight / 100); // glasses left part
+    line(bitmojiX + 73 * bitHeight / 100, bitmojiY + 45 * bitHeight / 100, bitmojiX + 89 *       bitHeight / 100, bitmojiY + 42 * bitHeight / 100); // glasses right part
+    fill(255, 255, 255);
+    ellipse(bitmojiX + 35 * bitHeight / 100, bitmojiY + 46 * bitHeight / 100, 14 * bitHeight     / 100, 8 * bitHeight / 100); // left eye
+    ellipse(bitmojiX + 62 * bitHeight / 100, bitmojiY + 46 * bitHeight / 100, 14 * bitHeight     / 100, 8 * bitHeight / 100); // right eye
+    fill(69, 38, 38);
+    arc(bitmojiX + 35 * bitHeight / 100, bitmojiY + 43 * bitHeight / 100, 9 * bitHeight / 100     , -8 * bitHeight / 100, 184, 363); // left pupil
+    arc(bitmojiX + 62 * bitHeight / 100, bitmojiY + 43 * bitHeight / 100, 9 * bitHeight / 100     , -8 * bitHeight / 100, 184, 363); // right pupil
+    fill(255, 255, 255);
+    arc(bitmojiX + 50 * bitHeight / 100, bitmojiY + 69 * bitHeight / 100, 33 * bitHeight /       100, 12 * bitHeight / 100, -8, 187); // mouth
+    fill(255, 207, 153);
+    arc(bitmojiX + 51 * bitHeight / 100, bitmojiY + 57 * bitHeight / 100, 14 * bitHeight /       100, 8 * bitHeight / 100, 74, 248); // nose
+    line(bitmojiX + 32 * bitHeight / 100, bitmojiY + 68 * bitHeight / 100, bitmojiX + 67 *       bitHeight / 100, bitmojiY + 68 * bitHeight / 100); // smile
+    arc(bitmojiX + 18 * bitHeight / 100, bitmojiY + 48 * bitHeight / 100, 13 * bitHeight /       100, 24 * bitHeight / 100, 70, 291); // left ear
+    arc(bitmojiX + 82 * bitHeight / 100, bitmojiY + 48 * bitHeight / 100, 13 * bitHeight /       100, 24 * bitHeight / 100, 249, 471); // right ear
+    fill(0, 0, 0);
+    arc(bitmojiX + 73 * bitHeight / 100, bitmojiY + 30 * bitHeight / 100, 33 * bitHeight /       100, -49 * bitHeight / 100, 318, 511); // hair
+    arc(bitmojiX + 50 * bitHeight / 100, bitmojiY + 19 * bitHeight / 100, 68 * bitHeight /       100, -32 * bitHeight / 100, 354, 561); // hair
+    arc(bitmojiX + 28 * bitHeight / 100, bitmojiY + 30 * bitHeight / 100, 35 * bitHeight /       100, -40 * bitHeight / 100, 391, 581); // hair
+    arc(bitmojiX + 34 * bitHeight / 100, bitmojiY + 39 * bitHeight / 100, 19 * bitHeight /       100, -5 * bitHeight / 100, 365, 586); // left eyebrow
+    arc(bitmojiX + 63 * bitHeight / 100, bitmojiY + 39 * bitHeight / 100, 19 * bitHeight /       100, -5 * bitHeight / 100, 322, 550); // right eyebrow
+    fill(0, 0, 0);
+    rect(bitmojiX + 46 * bitHeight / 100, bitmojiY + 83 * bitHeight / 100, 7 * bitHeight /       100, 6 * bitHeight / 100); // goatee
+    arc(bitmojiX + 50 * bitHeight / 100, bitmojiY + 143 * bitHeight / 100, 57 * bitHeight /      100, 63 * bitHeight / 100, 363, 542); // pants
+    rect(bitmojiX + 32 * bitHeight / 100, bitmojiY + 164 * bitHeight / 100, 10 * bitHeight /     100, 59 * bitHeight / 100); // left leg
+    rect(bitmojiX + 55 * bitHeight / 100, bitmojiY + 164 * bitHeight / 100, 10 * bitHeight /     100, 59 * bitHeight / 100); // right leg
+    arc(bitmojiX + 35 * bitHeight / 100, bitmojiY + 222 * bitHeight / 100, 24 * bitHeight /      100, 9 * bitHeight / 100, 290, 620); // left foot
+    arc(bitmojiX + 64 * bitHeight / 100, bitmojiY + 222 * bitHeight / 100, 24 * bitHeight /      100, 9 * bitHeight / 100, 277, 620); // right foot
+    fill(186, 193, 196);
+    noStroke();
+    arc(bitmojiX + 50 * bitHeight / 100, bitmojiY + 143 * bitHeight / 100, 59 * bitHeight /      100, -115 * bitHeight / 100, 360, 539); // shirt
+    beginShape(); // start of left arm
+    vertex(bitmojiX + 42 * bitHeight / 100, bitmojiY + 90 * bitHeight / 100);
+    bezierVertex(bitmojiX + 10 * bitHeight / 100, bitmojiY + 81 * bitHeight / 100, bitmojiX -     35 * bitHeight / 100, bitmojiY + 222 * bitHeight / 100, bitmojiX + 38 * bitHeight / 100,     bitmojiY + 97 * bitHeight / 100);
+    endShape(); // end of left arm
+    beginShape(); // start of right arm
+    vertex(bitmojiX + 58 * bitHeight / 100, bitmojiY + 89 * bitHeight / 100);
+    bezierVertex(bitmojiX + 101 * bitHeight / 100, bitmojiY + 88 * bitHeight / 100, bitmojiX     + 123 * bitHeight / 100, bitmojiY + 213 * bitHeight / 100, bitmojiX + 69 * bitHeight /       100, bitmojiY + 104 * bitHeight / 100);
+    endShape(); // end of right arm
+    fill(255, 207, 153);
+    arc(bitmojiX + 2 * bitHeight / 100, bitmojiY + 145 * bitHeight / 100, 12 * bitHeight /       100, 18 * bitHeight / 100, 291, 656); // left hand
+    arc(bitmojiX + 98 * bitHeight / 100, bitmojiY + 145 * bitHeight / 100, 12 * bitHeight /      100, 18 * bitHeight / 100, 291, 656); // right hand
+    fill(0, 0, 0);
+    rect(bitmojiX + 33 * bitHeight / 100, bitmojiY + 107 * bitHeight / 100, 17 * bitHeight /     100, 3 * bitHeight / 100); // "J" initial
+    rect(bitmojiX + 40 * bitHeight / 100, bitmojiY + 107 * bitHeight / 100, 3 * bitHeight /      100, 21 * bitHeight / 100); // "J" initial
+    arc(bitmojiX + 36 * bitHeight / 100, bitmojiY + 128 * bitHeight / 100, 13 * bitHeight /      100, 6 * bitHeight / 100, 337, 586); // "J" initial
+    rect(bitmojiX + 52 * bitHeight / 100, bitmojiY + 107 * bitHeight / 100, 3 * bitHeight /      100, 23 * bitHeight / 100); // "L" initial
+    rect(bitmojiX + 52 * bitHeight / 100, bitmojiY + 127 * bitHeight / 100, 16 * bitHeight /     100, 3 * bitHeight / 100); // "L" initial
+};
+
+//Kanz Giwa
+var drawBitmojiHead = function(bitX,bitY,bitmojiHeight){
+    var p =bitmojiHeight/100;
+   
+    //skin color
+    noStroke();
+    fill(56, 45, 45);
+//head
+ellipse(bitX+(p*0),bitY+(p*0),(p*83),(p*100));
+//left chisel
+fill(255,255,255);
+arc(bitX-(p*42), bitY+(p*37), (p*28), (p*55), (p*0), (p*361));
+//right chisel
+arc(bitX+p*42, bitY+p*37, p*28, p*55, p*0, p*361);
+fill(31, 19, 19);
+//nose
+bezier(bitX+p*0,bitY+p*9,bitX+p*21,bitY+p*22,bitX-p*8,bitY+p*20,bitX-p*4,bitY+p*15);
+//black hair
+quad(bitX+p*42,bitY-p*11,bitX+p*34,bitY-p*32,bitX-p*7,bitY-p*54,bitX+p*39,bitY-p*7);
+//top hair
+ fill(10, 10, 10);
+ //left hair
+quad(bitX-p*44,bitY-p*8,bitX-p*32,bitY-p*33,bitX-p*6,bitY-p*51,bitX-p*37,bitY-p*7);
+ //right hair
+ ellipse(bitX+p*0,bitY-p*37,p*40,p*18);
+ //headphone circles
+ strokeWeight(1);
+ fill(79, 72, 72);
+ ellipse(bitX-p*48,bitY-p*7,p*30,p*30);
+ fill(79,72,72);
+ ellipse(bitX+p*49,bitY-p*7,p*30,p*30);
+ //headphones
+strokeWeight(2);
+ fill(56, 43, 43);
+ rect(bitX+p*46,bitY-p*66,p*5,p*45);
+ fill(56, 43, 43);
+ rect(bitX-p*53,bitY-p*68, p*103,p*5);
+ fill(56,43,43);
+rect(bitX-p*54,bitY-p*66,p*5,p*45);
+ //eye color
+fill(23, 22, 20);    
+//left eye
+ellipse(bitX-p*14, bitY-p*25, p*15, p*13);  
+//right eye
+ellipse(bitX+p*12, bitY-p*25, p*15, p*13);  
+fill(31, 19, 19);
+
+//white fill for teeth
+fill(255, 255, 255);
+//mouth
+arc(bitX+p*3, bitY+p*25, p*30, p*13, 1, 180);
+
+//top of mouth
+line(bitX-p*14,bitY+p*24,bitX+p*19, bitY+p*24);
+
+//beard
+strokeWeight(9);
+stroke(10,10,10);
+line(bitX+p*20,bitY+p*36,bitX+p*38,bitY+p*8);
+
+stroke(10,10,10);
+line(bitX-p*42,bitY+p*9,bitX-p*10,bitY+p*39);
+};    
+var drawBitmojiBody =  function(bitX,bitY,bitmojiHeight){
+   
+    var p = bitmojiHeight/100;
+     //left sweater
+     noStroke();
+    fill(204, 201, 196);
+quad(bitX-p*82,bitY+p*100,bitX-p*63,bitY+p*32,bitX+p*0,bitY+p*46,bitX-p*1,bitY+p*103);
+
+//right sweater
+quad(bitX+p*90,bitY+p*100,bitX+p*60,bitY+p*32,bitX+p*0,bitY+p*46,bitX-p*1,bitY+p*103);
+
+//Letter K
+strokeWeight(7);
+stroke(10, 10, 10);
+line(bitX-p*39,bitY+p*44,bitX-p*40,bitY+p*101);
+
+stroke(10, 10, 10);
+line(bitX+p*2, bitY+p*50, bitX-p*39, bitY+p*81);
+
+stroke(10, 10, 10);
+line(bitX+p*2, bitY+p*102, bitX-p*42, bitY+p*81);
+
+//Letter G
+strokeWeight(2);
+fill(10, 10, 10);
+rect(bitX+p*20, bitY+p*47, p*5, p*45);
+
+fill(10, 10, 10);
+rect(bitX+p*26,bitY+p*86,p*40,p*5);
+
+fill(10, 10,10);
+rect(bitX+p*19,bitY+p*47,p*45,p*5 );
+
+fill(10,10,10);
+rect(bitX+p*61,bitY+p*73,p*5,p*15);
+
+fill(10,10,10);
+rect(bitX+p*37,bitY+p*73,p*26,p*5);
+};
+var DrawBitmoji = function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    drawBitmojiHead(bitmojiX,bitmojiY,bitmojiHeight);
+    drawBitmojiBody(bitmojiX,bitmojiY,bitmojiHeight);
+};
+
+//Food Bowl with color
+var drawFood = function (foodX, foodY, foodSize) {
+    // Wooden table background (Deleted but will be re-added during actual page)
+
+    
+noStroke();
+    // Bowl base
+    fill(135, 133, 128);
+    ellipse(foodX + 156 * foodSize / 100, foodY + 346 * foodSize / 100, 354 * foodSize / 100, 103 * foodSize / 100);
+
+    // Bowl content
+    fill(35, 172, 196);
+    ellipse(foodX + 200 * foodSize / 100, foodY + 249 * foodSize / 100, 363 * foodSize / 100, 283 * foodSize / 100); // Bottom part of the bowl
+    fill(144, 219, 232);
+    ellipse(foodX + 221 * foodSize / 100, foodY + 244 * foodSize / 100, 320 * foodSize / 100, 283 * foodSize / 100);
+
+    // Outside of the bowl
+    fill(35, 172, 196);
+    ellipse(foodX + 200 * foodSize / 100, foodY + 228 * foodSize / 100, 384 * foodSize / 100, 292 * foodSize / 100);
+    fill(144, 219, 232);
+    ellipse(foodX + 230 * foodSize / 100, foodY + 225 * foodSize / 100, 322 * foodSize / 100, 281 * foodSize / 100);
+
+    // Inside of the bowl
+    fill(255, 255, 255);
+    ellipse(foodX + 297 * foodSize / 100, foodY + 199 * foodSize / 100, -159 * foodSize / 100, 139 * foodSize / 100);
+
+    // Soup
+    fill(255, 233, 196);
+    ellipse(foodX + 200 * foodSize / 100, foodY + 196 * foodSize / 100, 329 * foodSize / 100, 201 * foodSize / 100);
+
+    // Hot bubbles
+    fill(255, 121, 25); // Darker
+    ellipse(foodX + 250 * foodSize / 100, foodY + 225 * foodSize / 100, 186 * foodSize / 100, 110 * foodSize / 100);
+    fill(247, 143, 64); // Dark
+    ellipse(foodX + 250 * foodSize / 100, foodY + 189 * foodSize / 100, 186 * foodSize / 100, 110 * foodSize / 100);
+    fill(247, 186, 139); // Light
+    ellipse(foodX + 140 * foodSize / 100, foodY + 219 * foodSize / 100, 186 * foodSize / 100, 110 * foodSize / 100);
+    fill(247, 204, 170); // Lighter
+    ellipse(foodX + 166 * foodSize / 100, foodY + 222 * foodSize / 100, 87 * foodSize / 100, 33 * foodSize / 100);
+
+    // Egg white
+    fill(208, 216, 217);
+    arc(foodX + 256 * foodSize / 100, foodY + 173 * foodSize / 100, 125 * foodSize / 100, 87 * foodSize / 100, 51, 412);
+    fill(255, 255, 255); // Dark part of the egg white
+    ellipse(foodX + 249 * foodSize / 100, foodY + 162 * foodSize / 100, 122 * foodSize / 100, 93 * foodSize / 100);
+
+    // Egg yolk
+    fill(255, 213, 0);
+    arc(foodX + 241 * foodSize / 100, foodY + 153 * foodSize / 100, 70 * foodSize / 100, 54 * foodSize / 100, 52, 412);
+    fill(255, 255, 255); // White part of the egg yolk
+    beginShape();
+    vertex(foodX + 255 * foodSize / 100, foodY + 131 * foodSize / 100);
+    bezierVertex(foodX + 198 * foodSize / 100, foodY + 124 * foodSize / 100, foodX + 195 * foodSize / 100, foodY + 163 * foodSize / 100, foodX + 241 * foodSize / 100, foodY + 145 * foodSize / 100);
+    endShape();
+
+    // Green onion
+    fill(79, 189, 101); // Light green
+    arc(foodX + 235 * foodSize / 100, foodY + 254 * foodSize / 100, 51 * foodSize / 100, 35 * foodSize / 100, -21, 346); // Shadow
+    fill(132, 235, 152); // Dark green
+    arc(foodX + 235 * foodSize / 100, foodY + 248 * foodSize / 100, 47 * foodSize / 100, 22 * foodSize / 100, -21, 346); // Light
+
+    // Right green onion
+    fill(132, 235, 152); // Light green
+    arc(foodX + 287 * foodSize / 100, foodY + 254 * foodSize / 100, 47 * foodSize / 100, 22 * foodSize / 100, -21, 346); // Horizontal down
+    fill(79, 189, 101); // Dark green
+    arc(foodX + 286 * foodSize / 100, foodY + 257 * foodSize / 100, 49 * foodSize / 100, 18 * foodSize / 100, -21, 346); // Shadow
+
+    // Right green onion
+    rotate(2);
+    fill(132, 235, 152); // Light green
+    arc(foodX + 322 * foodSize / 100, foodY + 215 * foodSize / 100, 20 * foodSize / 100, 40 * foodSize / 100, -21, 346); // Vertical right
+    fill(79, 189, 101); // Dark green
+    arc(foodX + 320 * foodSize / 100, foodY + 220 * foodSize / 100, 20 * foodSize / 100, 40 * foodSize / 100, -21, 346); // Shadow
+    rotate(-2);
+
+    // Left green onion
+    fill(79, 189, 101); // Dark green
+    arc(foodX + 267 * foodSize / 100, foodY + 232 * foodSize / 100, 49 * foodSize / 100, 18 * foodSize / 100, -21, 346); // Horizontal up
+    fill(132, 235, 152); // Light green
+    arc(foodX + 268 * foodSize / 100, foodY + 225 * foodSize / 100, 47 * foodSize / 100, 22 * foodSize / 100, -21, 346); // Shadow
+
+    // Sardine
+    fill(214, 141, 141);
+    arc(foodX + 178 * foodSize / 100, foodY + 226 * foodSize / 100, 213 * foodSize / 100, 89 * foodSize / 100, 102, 288); // Dark part of the fish
+    fill(217, 94, 94);
+    arc(foodX + 175 * foodSize / 100, foodY + 216 * foodSize / 100, 257 * foodSize / 100, 79 * foodSize / 100, 103, 288); // Light fish meat
+    fill(224, 112, 112);
+    ellipse(foodX + 128 * foodSize / 100, foodY + 202 * foodSize / 100, 73 * foodSize / 100, -5 * foodSize / 100); // Shiny part of the fish
+    fill(237, 176, 176);
+    ellipse(foodX + 125 * foodSize / 100, foodY + 203 * foodSize / 100, 38 * foodSize / 100, -2 * foodSize / 100); // Fish light
+
+};
+
+//Food Bowl without color
+var drawFoodWhite = function (foodX, foodY, foodSize) {
+    // Wooden table background
+    background(219, 204, 158);
+
+    
+
+    // Bowl base
+    fill(255, 255, 255); //135, 133, 128
+    ellipse(foodX + 156 * foodSize / 100, foodY + 346 * foodSize / 100, 354 * foodSize / 100, 103 * foodSize / 100);
+
+    // Bowl content
+    fill(255, 255, 255); //35, 172, 196
+    ellipse(foodX + 200 * foodSize / 100, foodY + 249 * foodSize / 100, 363 * foodSize / 100, 283 * foodSize / 100); // Bottom part of the bowl
+    fill(255, 255, 255); //144, 219, 232
+    ellipse(foodX + 221 * foodSize / 100, foodY + 244 * foodSize / 100, 320 * foodSize / 100, 283 * foodSize / 100);
+
+    // Outside of the bowl
+    fill(255, 255, 255); //35, 172, 196
+    ellipse(foodX + 200 * foodSize / 100, foodY + 228 * foodSize / 100, 384 * foodSize / 100, 292 * foodSize / 100);
+    fill(255, 255, 255); //144, 219, 232
+    ellipse(foodX + 230 * foodSize / 100, foodY + 225 * foodSize / 100, 322 * foodSize / 100, 281 * foodSize / 100);
+
+    // Inside of the bowl
+    fill(255, 255, 255); //255, 255, 255
+    ellipse(foodX + 297 * foodSize / 100, foodY + 199 * foodSize / 100, -159 * foodSize / 100, 139 * foodSize / 100);
+
+    // Soup
+    fill(255, 255, 255); //255, 233, 196
+    ellipse(foodX + 200 * foodSize / 100, foodY + 196 * foodSize / 100, 329 * foodSize / 100, 201 * foodSize / 100);
+
+    // Hot bubbles
+    fill(255, 253, 252); // Darker //255, 121, 25
+    ellipse(foodX + 250 * foodSize / 100, foodY + 225 * foodSize / 100, 186 * foodSize / 100, 110 * foodSize / 100);
+    fill(255, 255, 255); // Dark //247, 143, 64
+    ellipse(foodX + 250 * foodSize / 100, foodY + 189 * foodSize / 100, 186 * foodSize / 100, 110 * foodSize / 100);
+    fill(250, 250, 250); // Light //247, 186, 139
+    ellipse(foodX + 140 * foodSize / 100, foodY + 219 * foodSize / 100, 186 * foodSize / 100, 110 * foodSize / 100);
+    fill(255, 255, 255); // Lighter //247, 204, 170
+    ellipse(foodX + 166 * foodSize / 100, foodY + 222 * foodSize / 100, 87 * foodSize / 100, 33 * foodSize / 100);
+
+    // Egg white
+    fill(255, 255, 255); //208, 216, 217
+    arc(foodX + 256 * foodSize / 100, foodY + 173 * foodSize / 100, 125 * foodSize / 100, 87 * foodSize / 100, 51, 412); 
+    fill(255, 255, 255); // Dark part of the egg white
+    ellipse(foodX + 249 * foodSize / 100, foodY + 162 * foodSize / 100, 122 * foodSize / 100, 93 * foodSize / 100);
+
+    // Egg yolk
+    fill(255, 255, 255); //255, 213, 0
+    arc(foodX + 241 * foodSize / 100, foodY + 153 * foodSize / 100, 70 * foodSize / 100, 54 * foodSize / 100, 52, 412);
+    fill(255, 255, 255); // White part of the egg yolk //255, 255, 255
+    beginShape();
+    vertex(foodX + 255 * foodSize / 100, foodY + 131 * foodSize / 100);
+    bezierVertex(foodX + 198 * foodSize / 100, foodY + 124 * foodSize / 100, foodX + 195 * foodSize / 100, foodY + 163 * foodSize / 100, foodX + 241 * foodSize / 100, foodY + 145 * foodSize / 100);
+    endShape();
+
+    // Green onion
+    fill(255, 255, 255); // Light green //79, 189, 101
+    arc(foodX + 235 * foodSize / 100, foodY + 254 * foodSize / 100, 51 * foodSize / 100, 35 * foodSize / 100, -21, 346); // Shadow
+    fill(255, 255, 255); // Dark green //132, 235, 152
+    arc(foodX + 235 * foodSize / 100, foodY + 248 * foodSize / 100, 47 * foodSize / 100, 22 * foodSize / 100, -21, 346); // Light
+
+    // Right green onion
+    fill(255, 255, 255); // Light green //132, 235, 152
+    arc(foodX + 287 * foodSize / 100, foodY + 254 * foodSize / 100, 47 * foodSize / 100, 22 * foodSize / 100, -21, 346); // Horizontal down
+    fill(255, 255, 255); // Dark green //79, 189, 101
+    arc(foodX + 286 * foodSize / 100, foodY + 257 * foodSize / 100, 49 * foodSize / 100, 18 * foodSize / 100, -21, 346); // Shadow
+
+    // Right green onion
+    rotate(2);
+    fill(255, 255, 255); // Light green //132, 235, 152
+    arc(foodX + 322 * foodSize / 100, foodY + 215 * foodSize / 100, 20 * foodSize / 100, 40 * foodSize / 100, -21, 346); // Vertical right
+    fill(255, 255, 255); // Dark green //79, 189, 101
+    arc(foodX + 320 * foodSize / 100, foodY + 220 * foodSize / 100, 20 * foodSize / 100, 40 * foodSize / 100, -21, 346); // Shadow
+    rotate(-2);
+
+    // Left green onion
+    fill(255, 255, 255); // Dark green //79, 189, 101
+    arc(foodX + 267 * foodSize / 100, foodY + 232 * foodSize / 100, 49 * foodSize / 100, 18 * foodSize / 100, -21, 346); // Horizontal up
+    fill(255, 255, 255); // Light green //132, 235, 152
+    arc(foodX + 268 * foodSize / 100, foodY + 225 * foodSize / 100, 47 * foodSize / 100, 22 * foodSize / 100, -21, 346); // Shadow
+
+    // Sardine
+    fill(255, 255, 255); //214, 141, 141
+    arc(foodX + 178 * foodSize / 100, foodY + 226 * foodSize / 100, 213 * foodSize / 100, 89 * foodSize / 100, 102, 288); // Dark part of the fish
+    fill(255, 255, 255); //217, 94, 94
+    arc(foodX + 175 * foodSize / 100, foodY + 216 * foodSize / 100, 257 * foodSize / 100, 79 * foodSize / 100, 103, 288); // Light fish meat
+    fill(255, 255, 255); //224, 112, 112
+    ellipse(foodX + 128 * foodSize / 100, foodY + 202 * foodSize / 100, 73 * foodSize / 100, -5 * foodSize / 100); // Shiny part of the fish
+    fill(255, 255, 255); //237, 176, 176
+    ellipse(foodX + 125 * foodSize / 100, foodY + 203 * foodSize / 100, 38 * foodSize / 100, -2 * foodSize / 100); // Fish light
+
+};
+
+//Bubble Tea with color ONLY FOR CREDIT SCENE
+var bubbleTea = function (x, y, scale_factor) {
+
+    var Bubble = function (bubbleX, bubbleY) {
+        pushMatrix();
+        translate(bubbleX, bubbleY);
+        noStroke();
+        fill(77, 5, 5);
+        ellipse(200, 300, 17, 17);
+        fill(219, 181, 147);
+        ellipse(196, 297, 6, 6);
+        popMatrix();
+    };
+
+    scale(scale_factor);
+    translate(-30, -25);
+    pushMatrix();
+    popMatrix();
+
+    fill(255, 172, 48, 200);
+    stroke(255, 255, 255);
+
+    //bottom section
+    beginShape();
+    vertex(x + 153, y + 302);
+    vertex(x + 155, y + 315);
+    bezierVertex(x + 180, y + 325, x + 220, y + 325, x + 246, y + 315);
+    vertex(x + 248, y + 302);
+    endShape();
+
+    //second to last section
+    beginShape();
+    vertex(x + 146, y + 264);
+    vertex(x + 151, y + 300);
+    bezierVertex(x + 170, y + 315, x + 230, y + 315, x + 249, y + 300);
+    vertex(x + 254, y + 264);
+    endShape();
+
+    //third to last section drink
+    fill(255, 172, 48, 210);
+    stroke(255, 255, 255);
+    beginShape();
+    vertex(x + 129, y + 145);
+    vertex(x + 143, y + 260);
+    bezierVertex(x + 160, y + 283, x + 240, y + 283, x + 257, y + 260);
+    vertex(x + 271, y + 145);
+    endShape();
+
+    fill(247, 197, 143, 200);
+    ellipse(x + 200, y + 145, 144, 20);
+
+    //third to last section
+    noFill();
+    stroke(255, 255, 255);
+    ellipse(x + 200, y + 100, 160, 30);
+
+    beginShape();
+    vertex(x + 127, y + 132);
+    vertex(x + 143, y + 260);
+    bezierVertex(x + 160, y + 283, x + 240, y + 283, x + 257, y + 260);
+    vertex(x + 273, y + 132);
+    endShape();
+    noFill();
+
+    Bubble(x, y);
+    Bubble(x - 30, y - 10);
+    Bubble(x + 30, y + 10);
+    Bubble(x + 40, y - 8);
+    Bubble(x + 20, y - 16);
+    Bubble(x - 36, y + 6);
+    Bubble(x - 6, y + 16);
+    Bubble(x - 10, y - 14);
+
+    pushMatrix();
+    noStroke();
+    rotate(20);
+    fill(191, 74, 74);
+    rect(x + 330, y - 340, 15, 278);
+    ellipse(x + 338, y + -62, 14, 6);
+    fill(212, 111, 111);
+    rect(x + 333, y - 340, 5, 278);
+    fill(173, 35, 35);
+    ellipse(x + 338, y - 340, 14, 6);
+    popMatrix();
+
+    strokeWeight(1);
+    noFill();
+    stroke(255, 255, 255);
+    bezier(x + 155, y + 315, x + 180, y + 325, x + 220, y + 325, x + 246, y + 315);
+    bezier(x + 151, y + 300, x + 170, y + 315, x + 230, y + 315, x + 249, y + 300);
+    bezier(x + 143, y + 260, x + 160, y + 283, x + 240, y + 283, x + 257, y + 260);
+    bezier(x + 125, y + 130, x + 150, y + 150, x + 250, y + 150, x + 275, y + 130);
+
+    beginShape();
+    vertex(x + 120, y + 100);
+    vertex(x + 125, y + 130);
+    bezierVertex(x + 150, y + 150, x + 250, y + 150, x + 275, y + 130);
+    vertex(x + 280, y + 100);
+    endShape();
+    line(x + 235, y + 114, x + 253, y + 111);
+
+    //shine
+    stroke(255, 255, 255, 200);
+    strokeWeight(10);
+    line(x + 140, y + 120, x + 144, y + 150);
+    line(x + 161, y + 280, x + 147, y + 170);
+    line(x + 163, y + 295, x + 165, y + 307);
+    strokeWeight(5);
+    line(x + 150, y + 120, x + 152, y + 134);
+    line(x + 164, y + 210, x + 155, y + 150);
+    line(x + 166, y + 225, x + 170, y + 257);
+    line(x + 171, y + 283, x + 174, y + 300);
+};
+
+//Bubble Tea with color ONLY FOR Select SCENE
+var BubbleTea = function (x, y, teaSize) {
+
+    // Bubble Function
+    var Bubble = function (bubbleX, bubbleY) {
+        pushMatrix();
+        translate(bubbleX, bubbleY);
+        noStroke();
+        fill(77, 5, 5);
+        ellipse(0, 0, 17 * teaSize, 17 * teaSize);
+        fill(219, 181, 14);
+        ellipse(-4 * teaSize, -3 * teaSize, 6 * teaSize, 6 * teaSize);
+        popMatrix();
+    };
+
+    fill(255, 172, 48, 200);
+    stroke(255, 255, 255);
+
+    // Bottom section
+    beginShape();
+    vertex(x + 153 * teaSize, y + 302 * teaSize);
+    vertex(x + 155 * teaSize, y + 315 * teaSize);
+    bezierVertex(x + 180 * teaSize, y + 325 * teaSize, x + 220 * teaSize, y + 325 * teaSize, x + 246 * teaSize, y + 315 * teaSize);
+    vertex(x + 248 * teaSize, y + 302 * teaSize);
+    endShape();
+
+    // Second to last section
+    beginShape();
+    vertex(x + 146 * teaSize, y + 264 * teaSize);
+    vertex(x + 151 * teaSize, y + 300 * teaSize);
+    bezierVertex(x + 170 * teaSize, y + 315 * teaSize, x + 230 * teaSize, y + 315 * teaSize, x + 249 * teaSize, y + 300 * teaSize);
+    vertex(x + 254 * teaSize, y + 264 * teaSize);
+    endShape();
+
+    // Third to last section drink
+    fill(255, 172, 48, 210);
+    stroke(255, 255, 255);
+    beginShape();
+    vertex(x + 129 * teaSize, y + 145 * teaSize);
+    vertex(x + 143 * teaSize, y + 260 * teaSize);
+    bezierVertex(x + 160 * teaSize, y + 283 * teaSize, x + 240 * teaSize, y + 283 * teaSize, x + 257 * teaSize, y + 260 * teaSize);
+    vertex(x + 271 * teaSize, y + 145 * teaSize);
+    endShape();
+
+    // Third to last section ellipse
+    fill(255, 172, 48, 210);
+    ellipse(x + 200 * teaSize, y + 145 * teaSize, 144 * teaSize, 20 * teaSize);
+
+    // Third to last section outer ellipse
+    noFill();
+    stroke(255, 255, 255);
+    ellipse(x + 200 * teaSize, y + 100 * teaSize, 160 * teaSize, 30 * teaSize);
+    
+    beginShape();
+    vertex(x + 120* teaSize, y + 100* teaSize);
+    vertex(x + 129* teaSize, y + 146* teaSize);
+    bezierVertex(x + 145* teaSize, y + 159* teaSize, x + 252*     teaSize, y + 159* teaSize, x + 271* teaSize, y + 146* teaSize);
+    vertex(x + 280* teaSize, y + 101* teaSize);
+    endShape();
+    noFill();
+
+    // Bubbles
+    Bubble(x + 176 * teaSize, y + 286 * teaSize);
+    Bubble(x + 231 * teaSize, y + 297 * teaSize);
+    Bubble(x + 169 * teaSize, y + 308 * teaSize);
+    Bubble(x + 199 * teaSize, y + 299 * teaSize);
+    Bubble(x + 212 * teaSize, y + 313 * teaSize);
+    Bubble(x + 219 * teaSize, y + 284 * teaSize);
+    Bubble(x + 240 * teaSize, y + 278 * teaSize);
+    Bubble(x + 158 * teaSize, y + 284 * teaSize);
+
+    // Rest of the code...
+
+    // Straw Portion
+    pushMatrix();
+    rotate(20);
+    fill(191, 74, 74);
+    rect(x + 300 * teaSize, y - 352 * teaSize, 15 * teaSize, 278 * teaSize);
+    fill(212, 111, 111);
+    rect(x + 303 * teaSize, y - 352 * teaSize, 5 * teaSize, 278 * teaSize);
+    ellipse(x + 307 * teaSize, y + -73 * teaSize, 14 * teaSize, 6 * teaSize);
+    popMatrix();
+
+    strokeWeight(1);
+    noFill();
+    stroke(255, 255, 255);
+
+    // Rest of the code...
+
+    // Shine
+    stroke(255, 255, 255, 200);
+    strokeWeight(10);
+    line(x + 140 * teaSize, y + 120 * teaSize, x + 144 * teaSize, y + 150 * teaSize);
+    line(x + 161 * teaSize, y + 280 * teaSize, x + 147 * teaSize, y + 170 * teaSize);
+    line(x + 163 * teaSize, y + 295 * teaSize, x + 165 * teaSize, y + 307 * teaSize);
+    strokeWeight(5);
+    line(x + 150 * teaSize, y + 120 * teaSize, x + 152 * teaSize, y + 134 * teaSize);
+    line(x + 164 * teaSize, y + 210 * teaSize, x + 155 * teaSize, y + 150 * teaSize);
+    line(x + 166 * teaSize, y + 225 * teaSize, x + 170 * teaSize, y + 257 * teaSize);
+    line(x + 171 * teaSize, y + 283 * teaSize, x + 174 * teaSize, y + 300 * teaSize);
+};
+
+//Bubble Tea without color ONLY FOR SCENE 4
+var WhiteBubbleTea = function (x, y, teaSize) {
+
+    // Bubble Function
+    var Bubble = function (bubbleX, bubbleY) {
+        pushMatrix();
+        translate(bubbleX, bubbleY);
+        fill(196, 192, 186, 200);
+        ellipse(0, 0, 17 * teaSize, 17 * teaSize);
+        fill(196, 192, 186, 200);
+        ellipse(-4 * teaSize, -3 * teaSize, 6 * teaSize, 6 * teaSize);
+        popMatrix();
+    };
+
+    fill(196, 192, 186, 200);
+    stroke(255, 255, 255);
+
+    // Bottom section
+    beginShape();
+    vertex(x + 153 * teaSize, y + 302 * teaSize);
+    vertex(x + 155 * teaSize, y + 315 * teaSize);
+    bezierVertex(x + 180 * teaSize, y + 325 * teaSize, x + 220 * teaSize, y + 325 * teaSize, x + 246 * teaSize, y + 315 * teaSize);
+    vertex(x + 248 * teaSize, y + 302 * teaSize);
+    endShape();
+
+    // Second to last section
+    beginShape();
+    vertex(x + 146 * teaSize, y + 264 * teaSize);
+    vertex(x + 151 * teaSize, y + 300 * teaSize);
+    bezierVertex(x + 170 * teaSize, y + 315 * teaSize, x + 230 * teaSize, y + 315 * teaSize, x + 249 * teaSize, y + 300 * teaSize);
+    vertex(x + 254 * teaSize, y + 264 * teaSize);
+    endShape();
+
+    // Third to last section drink
+    fill(196, 192, 186, 200);
+    stroke(255, 255, 255);
+    beginShape();
+    vertex(x + 129 * teaSize, y + 145 * teaSize);
+    vertex(x + 143 * teaSize, y + 260 * teaSize);
+    bezierVertex(x + 160 * teaSize, y + 283 * teaSize, x + 240 * teaSize, y + 283 * teaSize, x + 257 * teaSize, y + 260 * teaSize);
+    vertex(x + 271 * teaSize, y + 145 * teaSize);
+    endShape();
+
+    // Third to last section ellipse
+    fill(196, 192, 186, 200);
+    ellipse(x + 200 * teaSize, y + 145 * teaSize, 144 * teaSize, 20 * teaSize);
+
+    // Third to last section outer ellipse
+    noFill();
+    stroke(255, 255, 255);
+    ellipse(x + 200 * teaSize, y + 100 * teaSize, 160 * teaSize, 30 * teaSize);
+    
+    beginShape();
+    vertex(x + 168, y + 140);
+    vertex(x + 180, y + 207);
+    bezierVertex(x + 361, y + 235, x + 387, y + 196, x + 379, y + 207);
+    vertex(x + 392, y + 139);
+    endShape();
+    noFill();
+
+    // Bubbles
+    Bubble(x + 176 * teaSize, y + 286 * teaSize);
+    Bubble(x + 231 * teaSize, y + 297 * teaSize);
+    Bubble(x + 169 * teaSize, y + 308 * teaSize);
+    Bubble(x + 199 * teaSize, y + 299 * teaSize);
+    Bubble(x + 212 * teaSize, y + 313 * teaSize);
+    Bubble(x + 219 * teaSize, y + 284 * teaSize);
+    Bubble(x + 240 * teaSize, y + 278 * teaSize);
+    Bubble(x + 158 * teaSize, y + 284 * teaSize);
+
+    // Rest of the code...
+
+    // Straw Portion
+    pushMatrix();
+    rotate(20);
+    fill(196, 192, 186, 200);
+    rect(x + 300 * teaSize, y - 101 * teaSize, 15 * teaSize, 278 * teaSize);
+    fill(196, 192, 186, 200);
+    rect(x + 303 * teaSize, y - 101 * teaSize, 5 * teaSize, 278 * teaSize);
+    ellipse(x + 307 * teaSize, y + 177 * teaSize, 14 * teaSize, 6 * teaSize);
+    popMatrix();
+
+    strokeWeight(1);
+    noFill();
+    stroke(255, 255, 255);
+
+    // Rest of the code...
+
+    // Shine
+    stroke(255, 255, 255, 200);
+    strokeWeight(10);
+    line(x + 140 * teaSize, y + 120 * teaSize, x + 144 * teaSize, y + 150 * teaSize);
+    line(x + 161 * teaSize, y + 280 * teaSize, x + 147 * teaSize, y + 170 * teaSize);
+    line(x + 163 * teaSize, y + 295 * teaSize, x + 165 * teaSize, y + 307 * teaSize);
+    strokeWeight(5);
+    line(x + 150 * teaSize, y + 120 * teaSize, x + 152 * teaSize, y + 134 * teaSize);
+    line(x + 164 * teaSize, y + 210 * teaSize, x + 155 * teaSize, y + 150 * teaSize);
+    line(x + 166 * teaSize, y + 225 * teaSize, x + 170 * teaSize, y + 257 * teaSize);
+    line(x + 171 * teaSize, y + 283 * teaSize, x + 174 * teaSize, y + 300 * teaSize);
+};
+
+var currentScene = 0; //0 = Splash Screen, 1 = game screen
+
+
+
+
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Cllck";
+    this.onClick = config.onClick || function() {};
+    this.buttonColor = config.buttonColor || color(153, 238, 212);
+    this.textColor = config.textColor || color(0, 0, 0);
+};
+Button.prototype.draw = function() {
+    fill(this.buttonColor); //color of the button
+    rect(this.x, this.y, this.width, this.height, 25); //shape of the button
+    fill(this.textColor); //text color
+    textSize(19);
+    textAlign(LEFT, TOP);
+    text(this.label, this.x+25, this.y+this.height/4); //text alignment
+}; //code that makes up the visual representation of the button
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+}; //Khan button class
+
+
+//Buttons for the Scene 1
+var aButton = new Button({
+x:28,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(135, 133, 128),
+onClick: function() {
+        fillColor = color(135, 133, 128);
+    }
+});
+var bButton = new Button({
+x:201,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(144, 219, 232),
+onClick: function() {
+        fillColor = color(144, 219, 232);
+    }
+});
+var cButton = new Button({
+x:143,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(255, 233, 196),
+onClick: function() {
+        fillColor = color(255, 233, 196);
+    }
+});
+var dButton = new Button({
+x:85,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(255, 121, 25),
+onClick: function() {
+        fillColor = color(255, 121, 25);
+    }
+});
+var eButton = new Button({
+x:259,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(255, 213, 0),
+onClick: function() {
+        fillColor = color(255, 213, 0);
+    }
+});
+var fButton = new Button({
+x:318,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(79, 189, 101),
+onClick: function() {
+        fillColor = color(79, 189, 101);
+    }
+});
+var gButton = new Button({
+x:376,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(217, 94, 94),
+onClick: function() {
+        fillColor = color(217, 94, 94);
+    }
+});
+var hButton = new Button({
+x:434,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(35, 172, 196),
+onClick: function() {
+        fillColor = color(35, 172, 196);
+    }
+});
+
+//Kemely505- What's for dinner (Scene 1)
+var drawScene1 = function(){
+    currentScene = 1;
+   
+   drawFoodWhite(65, 80, 120.5);
+   
+    aButton.draw();
+    bButton.draw();
+    cButton.draw();
+    dButton.draw();
+    eButton.draw();
+    fButton.draw();
+    gButton.draw();
+    hButton.draw();
+    sc4.draw();
+    noStroke();
+};
+
+//Buttons for the Scene 4
+var iButton = new Button({
+x:28,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(255, 172, 48, 200),
+onClick: function() {
+        fillColor = color(255, 172, 48, 200);
+    }
+});
+var jButton = new Button({
+x:201,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(247, 197, 143, 200),
+onClick: function() {
+        fillColor = color(247, 197, 143, 200);
+    }
+});
+var kButton = new Button({
+x:143,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(255, 172, 48, 210),
+onClick: function() {
+        fillColor = color(255, 172, 48, 210);
+    }
+});
+var lButton = new Button({
+x:85,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(77, 5, 5),
+onClick: function() {
+        fillColor = color(77, 5, 5);
+    }
+});
+var mButton = new Button({
+x:259,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(219, 181, 147),
+onClick: function() {
+        fillColor = color(219, 181, 147);
+    }
+});
+var nButton = new Button({
+x:318,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(191, 74, 74),
+onClick: function() {
+        fillColor = color(191, 74, 74);
+    }
+});
+var oButton = new Button({
+x:376,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(212, 111, 111),
+onClick: function() {
+        fillColor = color(212, 111, 111);
+    }
+});
+
+//Sen- Bubble Tea (Scene 4)
+var drawScene4 = function(){
+    currentScene = 4;
+//Background
+    background(54, 23, 0);
+    noStroke();
+    fill(125, 71, 4);
+    ellipse(149, 293, 250, 250);
+    fill(176, 144, 106);
+    ellipse(543, 536, 335, 329);
+    fill(153, 119, 52);
+    ellipse(504, 0, 440, 440);
+    fill(153, 125, 92);
+    ellipse(23, 19, 240, 240);
+    fill(156, 64, 36);
+    ellipse(132, 624, 300, 300);
+    
+    WhiteBubbleTea(14, 122, 1.4);
+    
+    iButton.draw();
+    jButton.draw();
+    kButton.draw();
+    lButton.draw();
+    mButton.draw();
+    nButton.draw();
+    oButton.draw();
+    sc5.draw();
+    noStroke();
+   
+};
+
+//Buttons for the Scene 5
+var pButton = new Button({
+x:85,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(255, 0, 0, 200),
+onClick: function() {
+        fillColor = color(255, 0, 0, 200);
+    }
+});
+var qButton = new Button({
+x:201,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(20, 54, 204, 200),
+onClick: function() {
+        fillColor = color(20, 54, 204, 200);
+    }
+});
+var rButton = new Button({
+x:143,
+y:14,
+width: 55,
+label: " ",
+buttonColor: color(33, 222, 118, 210),
+onClick: function() {
+        fillColor = color(33, 222, 118, 210);
+    }
+});
+
+//James & Kanz- Initials (Scene 5)
+var drawScene5 = function(){
+    currentScene = 5;
+//Background
+    background(0,0,0);
+    
+    fill(255,255,255);
+    textSize(300);
+    text("KJ",0,95);
+    
+    pButton.draw();
+    qButton.draw();
+    rButton.draw();
+    noStroke();
+   
+};
+
+//Credits Page
+var drawScene2 = function(){
+    currentScene = 2;
+    background(0, 137, 112);
+    //title
+    {
+    fill(153, 238, 212);
+    textAlign(CENTER);
+    textSize(75);
+    text("OLOR OASI",300,100);
+    textSize(105);
+    text("C              S",298,100);
+    textSize(41);
+    text("Credits & Attributes",300,153);
+    textAlign(LEFT);
+    }
+    
+    drawBitmoji(29, 347, 71);
+    DrawBitmoji(180, 426, 45);
+    textSize(18);
+    text("Color Oasis created by:",19,542);
+    text("James Leuk and Kanz Giwa",19,568);
+    textAlign(LEFT);
+    
+    drawFood(365, 357, 34.7);
+    textSize(18);
+    fill(0, 0, 0);
+    text("kemely505- What's for dinner?",318,542);
+    textAlign(LEFT);
+    
+    bubbleTea(763, 338, 0.5);
+    textSize(33);
+    fill(0, 0, 0);
+    text("Sen- A SIP OF BUBBLE TEA",725,735);
+    textAlign(LEFT);
+};
+
+//Selection Page
+var drawScene3 = function(){
+    currentScene = 3;
+    background(0, 137, 112);
+    
+     //title
+    {
+    fill(153, 238, 212);
+    textAlign(CENTER);
+    textSize(75);
+    text("OLOR OASI",300,100);
+    textSize(105);
+    text("C              S",298,100);
+    textSize(41);
+    text("Selection Page",300,153);
+    textAlign(LEFT);
+    }
+    
+    drawFood(53, 153, 34.7);
+    sc1.draw();
+    
+    sc4a.draw();
+    BubbleTea(347, 131, 0.5);
+    strokeWeight(1);
+    stroke(0, 0, 0);
+    
+    fill(255,255,255);
+    textSize(150);
+    text("KJ",200,364);
+    sc5a.draw();
+};
+//Buttons for Scene 3
+var sc1 = new Button({
+    x: 50,
+    y: 300,
+    label: "Start Button",
+    onClick: function() {
+        drawScene1(); //location brought to after clicking button
+    }
+});
+var sc4 = new Button({
+    x: 415,
+    y: 114,
+    label: "     Next",
+    onClick: function() {
+        drawScene4(); //location brought to after clicking button
+    }
+});
+var sc5 = new Button({
+    x: 415,
+    y: 540,
+    label: "     Next",
+    onClick: function() {
+        drawScene5(); //location brought to after clicking button
+    }
+});
+var sc4a = new Button({
+    x: 370,
+    y: 300,
+    label: "Start Button",
+    onClick: function() {
+        drawScene4(); //location brought to after clicking button
+    }
+});
+var sc5a = new Button({
+    x: 215,
+    y: 530,
+    label: "Start Button",
+    onClick: function() {
+        drawScene5(); //location brought to after clicking button
+    }
+});
+
+//Splash Screen Buttons
+var btn1 = new Button({
+    x: 220,
+    y: 410,
+    label: "Start Button",
+    onClick: function() {
+        drawScene1(); //location brought to after clicking button
+    }
+});
+var btn2 = new Button({
+    x: 50,
+    y: 440,
+    label: "    Credits",
+    onClick: function() {
+        drawScene2(); //location brought to after clicking button
+    }
+});
+var btn3 = new Button({
+    x: 390,
+    y: 440,
+    label: "    Select",
+    onClick: function() {
+        drawScene3(); //location brought to after clicking button
+    }
+});
+
+//Splash Screen
+var drawScene0 = function() {
+    background(0, 137, 112);
+     //title
+    {
+    fill(153, 238, 212);
+    textAlign(CENTER);
+    textSize(75);
+    text("OLOR OASI",300,170);
+    textSize(105);
+    text("C              S",298,171);
+    textSize(41);
+    text("THE BEST COLORING BOOK",300,85);
+    textAlign(LEFT);
+    }
+    
+
+        btn1.draw(); //Button to start the Game
+        btn2.draw(); //Button to show the Credits
+        btn3.draw(); //Button to select COloring Pages
+   
+};
+
+var currentScene = 0;
+//Reminder to go back and edit this
+mouseDragged = function() {
+    fill(fillColor);
+    ellipse(mouseX, mouseY, 15, 15);
+};
+
+mouseClicked = function() {
+    if(currentScene === 0){
+       btn1.handleMouseClick();
+       btn2.handleMouseClick();
+       btn3.handleMouseClick();
+  }
+    if(currentScene === 1) {
+    aButton.handleMouseClick();
+    bButton.handleMouseClick();
+    cButton.handleMouseClick();
+    dButton.handleMouseClick();
+    eButton.handleMouseClick();
+    fButton.handleMouseClick();
+    gButton.handleMouseClick();
+    hButton.handleMouseClick();
+    sc4.handleMouseClick();
+    }
+    if(currentScene === 3) {
+    sc1.handleMouseClick();
+    sc4a.handleMouseClick();
+    sc5a.handleMouseClick();
+    }
+    if(currentScene === 4) {
+    iButton.handleMouseClick();
+    jButton.handleMouseClick();
+    kButton.handleMouseClick();
+    lButton.handleMouseClick();
+    mButton.handleMouseClick();
+    nButton.handleMouseClick();
+    oButton.handleMouseClick();
+    sc5.handleMouseClick();
+    }
+    if(currentScene === 5) {
+    pButton.handleMouseClick();
+    qButton.handleMouseClick();
+    rButton.handleMouseClick();
+    }
+};
+
+   
+var draw = function() {
+    if (currentScene === 0) {
+        drawScene0();//draws splash screen
+    }
+   
+};
