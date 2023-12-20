@@ -721,7 +721,7 @@ x:28,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(135, 133, 128),
+buttonColor: color(135, 133, 128), //first color
 onClick: function() {
         fillColor = color(135, 133, 128);
     }
@@ -731,7 +731,7 @@ x:201,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(144, 219, 232),
+buttonColor: color(144, 219, 232),//light blue button
 onClick: function() {
         fillColor = color(144, 219, 232);
     }
@@ -741,7 +741,7 @@ x:143,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(255, 233, 196),
+buttonColor: color(255, 233, 196),//creme color button
 onClick: function() {
         fillColor = color(255, 233, 196);
     }
@@ -751,7 +751,7 @@ x:85,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(255, 121, 25),
+buttonColor: color(255, 121, 25),//orange button
 onClick: function() {
         fillColor = color(255, 121, 25);
     }
@@ -761,7 +761,7 @@ x:259,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(255, 213, 0),
+buttonColor: color(255, 213, 0), //yellow button
 onClick: function() {
         fillColor = color(255, 213, 0);
     }
@@ -771,7 +771,7 @@ x:318,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(79, 189, 101),
+buttonColor: color(79, 189, 101),//green button
 onClick: function() {
         fillColor = color(79, 189, 101);
     }
@@ -781,7 +781,7 @@ x:376,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(217, 94, 94),
+buttonColor: color(217, 94, 94), //dark red button
 onClick: function() {
         fillColor = color(217, 94, 94);
     }
@@ -791,7 +791,7 @@ x:434,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(35, 172, 196),
+buttonColor: color(35, 172, 196), //darker blue button
 onClick: function() {
         fillColor = color(35, 172, 196);
     }
@@ -800,8 +800,10 @@ onClick: function() {
 //Kemely505- What's for dinner (Scene 1)
 var drawScene1 = function(){
     currentScene = 1;
-   
+    
    drawFoodWhite(65, 80, 120.5);
+   drawBitmoji(29, 105, 71);
+    DrawBitmoji(520, 530, 45);
    
     aButton.draw();
     bButton.draw();
@@ -821,7 +823,7 @@ x:28,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(255, 172, 48, 200),
+buttonColor: color(255, 172, 48, 200),//1st tan color button
 onClick: function() {
         fillColor = color(255, 172, 48, 200);
     }
@@ -831,7 +833,7 @@ x:201,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(247, 197, 143, 200),
+buttonColor: color(247, 197, 143, 200),//3rd tan color button
 onClick: function() {
         fillColor = color(247, 197, 143, 200);
     }
@@ -841,7 +843,7 @@ x:143,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(255, 172, 48, 210),
+buttonColor: color(255, 172, 48, 210), //2nd tan color button
 onClick: function() {
         fillColor = color(255, 172, 48, 210);
     }
@@ -851,7 +853,7 @@ x:85,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(77, 5, 5),
+buttonColor: color(77, 5, 5),//brown color button
 onClick: function() {
         fillColor = color(77, 5, 5);
     }
@@ -861,7 +863,7 @@ x:259,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(219, 181, 147),
+buttonColor: color(219, 181, 147),//light tan color button
 onClick: function() {
         fillColor = color(219, 181, 147);
     }
@@ -871,7 +873,7 @@ x:318,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(191, 74, 74),
+buttonColor: color(191, 74, 74),//red button
 onClick: function() {
         fillColor = color(191, 74, 74);
     }
@@ -881,7 +883,7 @@ x:376,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(212, 111, 111),
+buttonColor: color(212, 111, 111),//pink button
 onClick: function() {
         fillColor = color(212, 111, 111);
     }
@@ -906,6 +908,9 @@ var drawScene4 = function(){
     
     WhiteBubbleTea(14, 122, 1.4);
     
+    drawBitmoji(29, 105, 71);
+    DrawBitmoji(520, 480, 45);
+    
     iButton.draw();
     jButton.draw();
     kButton.draw();
@@ -924,7 +929,7 @@ x:85,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(255, 0, 0, 200),
+buttonColor: color(255, 0, 0, 200),//red button
 onClick: function() {
         fillColor = color(255, 0, 0, 200);
     }
@@ -934,7 +939,7 @@ x:201,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(20, 54, 204, 200),
+buttonColor: color(20, 54, 204, 200),//blue button
 onClick: function() {
         fillColor = color(20, 54, 204, 200);
     }
@@ -944,7 +949,7 @@ x:143,
 y:14,
 width: 55,
 label: " ",
-buttonColor: color(33, 222, 118, 210),
+buttonColor: color(33, 222, 118, 210),//green button
 onClick: function() {
         fillColor = color(33, 222, 118, 210);
     }
@@ -959,6 +964,9 @@ var drawScene5 = function(){
     fill(255,255,255);
     textSize(300);
     text("KJ",0,95);
+    
+    drawBitmoji(520, 105, 71);
+    DrawBitmoji(520, 430, 45);
     
     pButton.draw();
     qButton.draw();
